@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+  body {
+    @apply overflow-hidden bg-primaryLight font-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: hsl(257, 27%, 26%);
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    @apply bg-primary;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .label {
+    @apply mb-1 text-base text-primaryDark md:text-base;
+  }
+
+  .result {
+    @apply flex items-center justify-between mb-4 md:mb-8;
+
+    &__label {
+      span {
+        @apply block text-head;
+      }
+      @apply text-sm text-primaryLight;
+    }
+
+    &__amount {
+      svg {
+        @apply w-3 fill-primary md:w-4 lg:w-5;
+      }
+      span {
+        @apply text-2.5xl md:text-3xl lg:text-5xl;
+      }
+
+      @apply flex items-center gap-1 text-primary;
+    }
+  }
+}
